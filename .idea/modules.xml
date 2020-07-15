@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/elastic-db-file-dispatch/elastic-db-file-dispatch.iml" filepath="$PROJECT_DIR$/elastic-db-file-dispatch/elastic-db-file-dispatch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elastic-file-dispatch/elastic-file-dispatch.iml" filepath="$PROJECT_DIR$/elastic-file-dispatch/elastic-file-dispatch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elastic-job-demo.iml" filepath="$PROJECT_DIR$/elastic-job-demo.iml" />
+    </modules>
+  </component>
+</project>

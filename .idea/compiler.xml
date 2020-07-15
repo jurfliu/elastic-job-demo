@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="elastic-db-file-dispatch" />
+        <module name="elastic-file-dispatch" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="elastic-db-file-dispatch" target="1.8" />
+      <module name="elastic-file-dispatch" target="1.8" />
+      <module name="elastic-job-demo" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
