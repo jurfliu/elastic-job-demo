@@ -18,8 +18,6 @@ import javax.sql.DataSource;
 @Configuration
 public class ElasticJobConfig {
     @Autowired
-    private DataSource dataSource; //数据源已经存在，直接引入
-    @Autowired
     FileBackUpJob fileBackupJob;
     @Autowired
     CoordinatorRegistryCenter registryCenter;
@@ -37,7 +35,10 @@ public class ElasticJobConfig {
                                                         final String shardingItemParameters){
         //JobCoreConfigurationBuilder
         JobCoreConfiguration.Builder JobCoreConfigurationBuilder = JobCoreConfiguration.newBuilder(jobClass.getName(), cron, shardingTotalCount);
-
+        //设置shardingItemParameters
+        if(!StringUtils.isEmpty(shardingItemParameters)){
+            JobCoreConfigurationBuilder.shardingItemParameters(shardingItemParameters);
+        }
         JobCoreConfiguration jobCoreConfiguration = JobCoreConfigurationBuilder.build();
         //创建SimpleJobConfiguration
         SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, jobClass.getCanonicalName());
@@ -51,12 +52,10 @@ public class ElasticJobConfig {
     public SpringJobScheduler initSimpleElasticJob() {
         // 增加任务事件追踪配置
         System.out.println("..........");
-        JobEventConfiguration jobEventConfig = new JobEventRdbConfiguration(dataSource);
         //创建SpringJobScheduler
         SpringJobScheduler springJobScheduler = new SpringJobScheduler(fileBackupJob, registryCenter,
-                createJobConfiguration(fileBackupJob.getClass(), "0/10 * * * * ?", 6, null));
+                createJobConfiguration(fileBackupJob.getClass(), "0/10 * * * * ?", 1, null));
 
-               // ,null);
 
 
         return springJobScheduler;

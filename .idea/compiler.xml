@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="elastic-db-file-dispatch" />
         <module name="elastic-file-dispatch" />
+        <module name="simple-time-task" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="elastic-db-file-dispatch" target="1.8" />
       <module name="elastic-file-dispatch" target="1.8" />
       <module name="elastic-job-demo" target="1.7" />
+      <module name="simple-time-task" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

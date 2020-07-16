@@ -3,7 +3,6 @@ package com.ljf.elastic.job.db.job;
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
 import com.ljf.elastic.job.db.model.FileData;
-import com.ljf.elastic.job.db.service.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -63,7 +62,7 @@ public class FileBackUpJob implements SimpleJob {
             }
 
         }
-        System.out.printf(Thread.currentThread().getName()+"文件状态:"+((fileCustoms!=null&&fileCustoms.size()>0)?fileCustoms.get(0).getBackedUp():0)+"  time:%s,获取文件%d个\n", LocalDateTime.now(),num);
+        System.out.printf(Thread.currentThread().getName()+" 文件状态: "+((fileCustoms!=null&&fileCustoms.size()>0)?fileCustoms.get(0).getBackedUp():0)+"  time:%s,获取文件%d个,名称：%s,\n", LocalDateTime.now(),num,((fileCustoms!=null&&fileCustoms.size()>0)?fileCustoms.get(0).getName():" >>没有文件"));
         return fileCustoms;
 
     }
@@ -75,6 +74,7 @@ public class FileBackUpJob implements SimpleJob {
     public void backupFiles(List<FileData> filesList){
         for(FileData fileCustomm:filesList){
             System.out.printf(Thread.currentThread().getName()+"备份之前的状态:"+fileCustomm.getBackedUp()+" time:%s,备份文件，名称：%s，类型：%s\n", LocalDateTime.now(),fileCustomm.getName(),fileCustomm.getType());
+
             fileCustomm.setBackedUp(true);
             System.out.printf(Thread.currentThread().getName()+" time:%s,备份文件，名称：%s，类型：%s\n", LocalDateTime.now(),fileCustomm.getName(),fileCustomm.getType());
         }

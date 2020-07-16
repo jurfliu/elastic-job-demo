@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/elastic-db-file-dispatch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/elastic-file-dispatch" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/simple-time-task" charset="UTF-8" />
   </component>
 </project>
