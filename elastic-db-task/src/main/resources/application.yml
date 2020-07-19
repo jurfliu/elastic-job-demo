@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/elastic_job_demo?serverTimezone=UTC&useunicode=true&characterencoding=utf-8&usessl=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+server:
+  port: 8091

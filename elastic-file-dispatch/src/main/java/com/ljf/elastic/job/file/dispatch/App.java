@@ -36,7 +36,7 @@ public class App
     //任务的配置和启动
     private static void startJob(CoordinatorRegistryCenter registryCenter){
         //String jobName 任务名称, String cron 调度表达式, int shardingTotalCount 作业分片数量
-        JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration.newBuilder("fiels-job-01", "0/10 * * * * ?", 4).build();
+        JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration.newBuilder("fiels-job-01", "0/10 * * * * ?", 1).build();
         //创建SimpleJobConfiguration
         SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, FileBackUpJob.class.getCanonicalName());
         //创建new JobScheduler

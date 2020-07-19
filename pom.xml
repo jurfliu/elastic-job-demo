@@ -12,6 +12,7 @@
     <module>elastic-file-dispatch</module>
       <module>elastic-db-file-dispatch</module>
       <module>simple-time-task</module>
+      <module>elastic-db-task</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
